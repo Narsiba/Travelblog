@@ -116,23 +116,17 @@ $(document).ready(function(){
                                       <li><a href="about.html">About</a></li>
                                       <li class="sub-menu"><a href="javascript:{}">Features</a>
                                           <ul>
-                                              <li><a href="scaffolding.html"><span>-</span>Scaffolding</a></li>
-                                              <li><a href="typography.html"><span>-</span>Typography</a></li>
-                                              <li><a href="shortcodes.html"><span>-</span>Shortcodes</a></li>
-                                              <li><a href="tables.html"><span>-</span>Tables</a></li>
+                                              {% page_menu "pages/menus/dropdown.html" %}
                                           </ul>
                                       </li>
                                       <li class="sub-menu"><a href="javascript:{}">Portfolio</a>
                                            <ul>
-                                              <li><a href="portfolio_2columns.html"><span>-</span>2 Columns</a></li>
-                                              <li><a href="portfolio_3columns.html"><span>-</span>3 Columns</a></li>
-                                              <li><a href="portfolio_4columns.html"><span>-</span>4 Columns</a></li>
+                                            {% page_menu "pages/menus/dropdown.html" %}
                                           </ul>
                                       </li>
                                       <li class="sub-menu"><a href="javascript:{}">Blog</a>
                                            <ul>
-                                              <li><a href="blog.html"><span>-</span>Blog with right sidebar</a></li>
-                                              <li><a href="blog_post.html"><span>-</span>Blog post</a></li>
+                                            {% page_menu "pages/menus/dropdown.html" %}
                                           </ul>
                                       </li>
                                       <li><a href="contacts.html">Contacts</a></li>
@@ -146,7 +140,32 @@ $(document).ready(function(){
         </div>
     </div>
     <!--//header-->
-{% block all_content %}{% endblock %}
+{% block all_content %}
+<!--page_container-->
+<div class="page_container">
+    <div class="breadcrumb">
+        <div class="wrap">
+            <div class="container">
+                <ul class="breadcrumb">
+                {% spaceless %}
+                {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+                {% endspaceless %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% block main_wrapper %}
+<div class="span8">
+    {% block main %}{% endblock %}
+</div>
+{% endblock %}
+{% block right_wrapper %}
+<div class="span4">
+    {% block right_panel %}{% include "blog/includes/filter_panel.html" %}{% endblock %}
+</div>
+{% endblock %}\
+<!--//page_container-->
+{% endblock %}
 
     <!--footer-->
     <div id="footer">

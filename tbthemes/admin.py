@@ -4,17 +4,17 @@ from mezzanine.pages.admin import PageAdmin
 from .models import HomePage, Slide, IconBlurb, Portfolio
 
 # Register your models here.
-class SlideAdminInline(TabularDynamicInlineAdmin):
+class SlideInline(TabularDynamicInlineAdmin):
     model = Slide
 
-class IconAdminInline(TabularDynamicInlineAdmin):
+class IconInline(TabularDynamicInlineAdmin):
     model = IconBlurb
 
 class HomePageAdmin(PageAdmin):
     model = HomePage
     inlines = [
-        SlideAdminInline,
-        IconAdminInline,
+        SlideInline,
+        IconInline,
     ]
 
 admin.site.register(HomePage, HomePageAdmin)
