@@ -12,7 +12,7 @@ body { overflow-x:hidden;
 .header {
 	padding:36px 0 21px 0;
 	background:#fff;
-	border-top:5px #d00b01 solid;
+	border-top:5px #48d1cc solid; /* Color and size of the line on top of page */
 }
 .fleft {float:left;
 }
@@ -706,7 +706,7 @@ legend {
 	position:absolute;
 	left:50%;
 	top:50%;
-	margin:-13px 0 0 -33px;
+	margin:-13px 0 0 -16.5px;
 	background-image:url(../img/zoom.png);
 	background-position:0 -33px;
 	background-repeat:no-repeat;

@@ -22,6 +22,7 @@
 <link rel="stylesheet" id="camera-css"  href="{% static "css/camera.css" %}" type="text/css" media="all">
 <link href="{% static "css/bootstrap.css" %}" rel="stylesheet">
 <link href="{% static "css/theme.css" %}" rel="stylesheet">
+<link href="{% static "css/flex.css" %}" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="{% static "css/skins/tango/skin.css" %}" />
 <link href="{% static "css/bootstrap-responsive.css" %}" rel="stylesheet">
 {% block extra_css %}{% endblock %}
@@ -141,7 +142,7 @@ $(document).ready(function(){
     </div>
     <!--//header-->
 {% block all_content %}
-<!--page_container-->
+<!--//page_container-->
 <div class="page_container">
     <div class="breadcrumb">
         <div class="wrap">
@@ -164,12 +165,12 @@ $(document).ready(function(){
     {% block right_panel %}{% include "blog/includes/filter_panel.html" %}{% endblock %}
 </div>
 {% endblock %}\
-<!--//page_container-->
+<!--page_container-->
 {% endblock %}
 
     <!--footer-->
     <div id="footer">
-    	<div class="wrap">
+    <div class="wrap">
     		<div class="container">
             	<div class="row">
                 	<div class="span4">
