@@ -11,49 +11,32 @@
 <div class="page_container">
 {% if page.homepage.slides.all %}
     <!--slider-->
-    <div id="main_slider">
+   <div id="main_slider">
         <div class="camera_wrap" id="camera_wrap_1">
           {% for slide in page.homepage.slides.all %}
             <div data-src="{{ MEDIA_URL }}{% thumbnail slide.image 1920 690 %}"></div>
           {% endfor %}
         </div><!-- #camera_wrap_1 -->
-        <div class="clear"></div>
+      <div class="clear"></div>
     </div>
     <!--//slider-->
-    {% endif %}
+  {% endif %}
     <!--planning-->
     <div class="wrap planning">
-        <div class="container">
-            <div class="row">
+        <div class="flex_container">
+            <!--<div class="row">-->
+              {% for icon in page.homepage.blurbs.all %}
                 <div class="span3">
-                    <a href="#">
-                      <span class="img_icon icon1"></span>
-                        <span class="link_title">egestas dolor</span>
-                      Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                    </a>
+                <a href="#">
+                    <span class="img_icon">
+                          <img src="{{ MEDIA_URL }}{% thumbnail icon.icon 70 70 %}">
+                    </span>
+                        <span class="link_title">{{icon.title }}</span>
+                      {{ icon.content }}
+                   </a>
                 </div>
-                <div class="span3">
-                    <a href="#">
-                      <span class="img_icon icon2"></span>
-                        <span class="link_title">Itinerary</span>
-                      Check out, where we have been so far.
-                    </a>
-                </div>
-                <div class="span3">
-                    <a href="#">
-                      <span class="img_icon icon3"></span>
-                        <span class="link_title">Pictures</span>
-                      Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                    </a>
-                </div>
-                <div class="span3">
-                    <a href="#">
-                      <span class="img_icon icon4"></span>
-                        <span class="link_title">nulla feugiat</span>
-                      Nunc vel arcu arcu. Nulla mollis feugiat dui id tincidunt. Aenean ac lobortis elit.
-                    </a>
-                </div>
-            </div>
+              {% endfor %}
+            <!--</div>-->
         </div>
     </div>
     <!--//planning-->
